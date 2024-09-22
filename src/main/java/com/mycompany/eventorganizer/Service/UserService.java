@@ -1,6 +1,7 @@
 package com.mycompany.eventorganizer.Service;
 
 import com.mycompany.eventorganizer.Model.User;
+import com.mycompany.eventorganizer.UserDAO.UserDAO;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -11,6 +12,8 @@ public abstract class UserService {
 
     public static void Adicionar(User usuario) {
         usuarios.put(contador++, usuario); 
+        UserDAO.inserir(usuario.getEmail(), usuario.getSenha());
+        
     }
 
     public static boolean Remover(Object objeto) {
