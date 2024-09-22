@@ -1,58 +1,56 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.eventorganizer.Service;
+
 import com.mycompany.eventorganizer.Model.User;
-import java.util.LinkedList;
-import java.util.List;
-/**
- *
- * @author Erick
- */
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public abstract class UserService {
-    private static final List<User> USERS = new LinkedList<>();
-    
-    public static boolean Adicionar(User usuario){
-        if(!exists(usuario)){
-        USERS.add(usuario);
-        System.out.print("Objeto adicionado com sucesso!");
-        return true;}
-        System.out.print("Usuario já existe");
-        return false;
-        
+
+    private static final Map<Integer, User> usuarios = new LinkedHashMap<>();
+    private static int contador = 1; 
+
+    public static void Adicionar(User usuario) {
+        usuarios.put(contador++, usuario); 
     }
-    
-    public static boolean Remover(User usuario){
-        for(int i = 0; i<USERS.size(); i++){
-            if(usuario.equals(i)){
-                USERS.remove(i);
+
+    public static boolean Remover(Object objeto) {
+        if (objeto instanceof Integer) {
+            Integer id = (Integer) objeto;
+            if (usuarios.containsKey(id)) {
+                usuarios.remove(id);
+
+               
+                for (int i = id + 1; usuarios.containsKey(i); i++) {
+                    usuarios.put(i - 1, usuarios.get(i));
+                    usuarios.remove(i);
+                }
+                return true; 
             }
-            
+        } else if (objeto instanceof User) {
+            User usuario = (User) objeto;
+            for (Map.Entry<Integer, User> entry : usuarios.entrySet()) {
+                if (entry.getValue().equals(usuario)) {
+                    usuarios.remove(entry.getKey());
+                    for (int i = entry.getKey() + 1; usuarios.containsKey(i); i++) {
+                        usuarios.put(i - 1, usuarios.get(i));
+                        usuarios.remove(i);
+                    }
+                    return true; 
+                }
+            }
         }
-        return exists(usuario);
+        return false; 
     }
 
-    public static List<User> getUSERS() {
-        return USERS;
+    public static Map<Integer, User> getUsuarios() {
+        return usuarios;
     }
-    public static boolean exists(User usuario){
-        for(int i = 0; i<USERS.size(); i++){
-            if(USERS.get(i).equals(usuario))
-            return true;
+    public static Boolean exists(Object entrada) {
+        if (entrada instanceof Integer) {
+            return usuarios.containsKey(entrada);
+        } else if (entrada instanceof User) {
+            return usuarios.containsValue(entrada);
         }
-        
-        return false;
+        return false; 
     }
-    public static boolean exists(Integer id){
-        for(int i = 0; i<USERS.size(); i++){
-            if(USERS.get(i).getId().equals(id)){
-            return true;
-        }
-     
-    }
-           return false;
-}
-
-    
 }

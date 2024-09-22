@@ -12,15 +12,13 @@ import com.mycompany.eventorganizer.Model.User;
 public class UserTestes {
     @Test
     void UsuarioTesteUm(){
-        User usuario = new User("Erickverissimo","erick123",2);
-        User usuario2 = new User("Erickverissimo","erick123",2);
+        User usuario = new User("Erickverissimo","erick123");
+        User usuario2 = new User("Erickverissimo","erick123");
         boolean Ingual = usuario.equals(usuario2);
         System.out.print(Ingual);
     }
-    @Test
-    void UsuarioTesteDois(){
-        User usuario = new User("Erick", "senha", 1);
-        System.out.println(usuario.equals("erick", 1));
-        
-        }
+ @Test 
+ void UsuarioTesteDois(){
+     
+ }
 }
