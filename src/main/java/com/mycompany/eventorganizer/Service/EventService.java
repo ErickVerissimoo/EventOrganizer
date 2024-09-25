@@ -17,6 +17,10 @@ import java.util.Map;
  */
 
 public class EventService {
+
+    public static Map<Integer, Event> getEventos() {
+        return eventos;
+    }
     private static final Map<Integer, Event> eventos = new LinkedHashMap<>();
     private static int contador = 1;
     public static final void Adicionar(Event evento) throws ParseException{

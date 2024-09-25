@@ -9,8 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -23,13 +22,20 @@ import java.util.logging.Logger;
 public class EventController extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         try {
-            EventService.Adicionar(new Event(req.getParameter("eventName"), req.getParameter("eventDes"), req.getParameter("eventDate") ));
+            Event evento = new Event(req.getParameter("eventName"), req.getParameter("eventDes"), req.getParameter("eventDate"));
+            
+            EventService.Adicionar(evento);
+            req.setAttribute("evento", evento);
+            req.setAttribute("eventosMap", EventService.getEventos());
+            req.getRequestDispatcher("Eventos.jsp").forward(req, resp);
         } catch (ParseException ex) {
-            ex.printStackTrace();
+            Logger.getLogger(EventController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    
+          
+        
             
        
                }
