@@ -1,2 +1,4 @@
 UserTest/UserTestes.class
+DatabaseTests/DatabaseTest.class
 UserServiceTest/ServicesTest.class
+eventTestes/testes.class

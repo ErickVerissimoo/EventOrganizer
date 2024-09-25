@@ -1,3 +1,10 @@
-/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Controller/UserController.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/UserDAO/EventDAO.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Controller/EventController.java
 /home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Model/User.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Model/Event.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/DatabaseManagement/DatabaseManagement.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Service/EventService.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/UserDAO/UserDAO.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Controller/LoginController.java
 /home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Service/UserService.java
+/home/gil/NetBeansProjects/EventOrganizer/src/main/java/com/mycompany/eventorganizer/Controller/CadastroController.java

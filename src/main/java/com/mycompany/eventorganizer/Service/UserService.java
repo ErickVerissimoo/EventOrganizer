@@ -54,6 +54,13 @@ public abstract class UserService {
         } else if (entrada instanceof User) {
             return usuarios.containsValue(entrada);
         }
+        else if(entrada instanceof String){
+            for(Map.Entry<Integer, User> entre : usuarios.entrySet()){
+                if(entre.getValue().getEmail().equals(entrada)){
+                    return true;
+                }
+            }
+        }
         return false; 
     }
 }

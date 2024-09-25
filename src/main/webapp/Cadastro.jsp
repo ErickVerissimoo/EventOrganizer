@@ -12,15 +12,17 @@
         <title>Cadastro</title>
     </head>
     <body>
-        <form method="POST" action="UserController">
+        <form method="POST" action="Cadastro">
         <h1>Cadastro</h1>
         <label for="EMAIL">Email: </label><br>
         <input type="email" name="EMAIL" required><br>
         <label for="SENHA">Senha: </label><br>
         <input name="SENHA" type="password" required><br>
         <label for="ConfirmeSe">Confirme a senha: </label><br>
-        <input type="password" name="ConfirmaeSe" required>
-        <button type="submit">Cadastrar</button>
+        <input type="password" name="ConfirmaeSe" required><br>
+        <button type="submit">Cadastrar</button><br>
+        <a href="index.jsp">Já é cadastrado?</a>
         </form>
+        
         </body>
 </html>

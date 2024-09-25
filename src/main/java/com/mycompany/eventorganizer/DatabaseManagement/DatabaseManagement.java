@@ -15,11 +15,12 @@ import java.sql.SQLException;
 public abstract class DatabaseManagement {
     private static final String USER = "erick";
     private static final String PASSWORD = "erick123";
-    private static final String JDBC = "jdbc:mysql://127.0.0.1:3306/usuarios";
-
-    public static Connection conexao () throws SQLException{
-        Connection conexao = DriverManager.getConnection(JDBC, USER, PASSWORD);
-        return conexao;
+    private static final String JDBC = "jdbc:mysql://127.0.0.1:3306/EventOrganizer";
+    
+    public static Connection conexao () throws SQLException, ClassNotFoundException{
+      Class.forName("com.mysql.cj.jdbc.Driver");
+        
+        return DriverManager.getConnection(JDBC, USER, PASSWORD);
     }
     
     }
