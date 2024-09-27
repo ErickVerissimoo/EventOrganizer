@@ -41,4 +41,6 @@ public class EventService {
     public static Boolean exists(Object evento){
         return eventos.containsKey((Event) evento) || eventos.containsKey((Integer) evento);
     }
+    
+  
 }

@@ -33,8 +33,7 @@
     <div class="row">
         <c:forEach var="entry" items="${eventosMap.entrySet()}">
             <div class="col-md-4 mb-4">
-                <div class="card evento" onclick="window.location.href='EditarEventos.jsp';">
-                    <div class="card-body">
+        <div class="card evento" onclick="window.location.href='Editar?id=${entry.key}';">                    <div class="card-body" >
                         <h5 class="card-title">${entry.value.nome}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">${entry.value.data}</h6>
                         <p class="card-text">${entry.value.descricao}</p>
@@ -69,7 +68,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 <script>
     window.onload = function() {
         document.getElementById("form1").reset();
