@@ -11,7 +11,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakartaee>10.0.0</jakartaee>
     </properties>
-    
     <dependencies>
         <dependency>
             <groupId>jakarta.platform</groupId>
@@ -24,12 +23,6 @@
     <artifactId>junit-jupiter-api</artifactId>
     <version>5.11.0</version>
     <scope>test</scope>
-    
-</dependency>
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.21</version>
 </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -46,6 +39,11 @@
     <artifactId>jakarta.servlet.jsp.jstl</artifactId>
     <version>3.0.1</version>
 </dependency>
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.7.4</version>
+    </dependency>
     </dependencies>
     
     <build>

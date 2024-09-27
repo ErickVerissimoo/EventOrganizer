@@ -14,12 +14,11 @@ import java.sql.SQLException;
  */
 public abstract class DatabaseManagement {
     private static final String USER = "erick";
-    private static final String PASSWORD = "erick123";
-    private static final String JDBC = "jdbc:mysql://127.0.0.1:3306/EventOrganizer";
+    private static final String PASSWORD = "erick";
+    private static final String JDBC = "jdbc:postgresql://localhost:5432/EventOrganizer";
     
     public static Connection conexao () throws SQLException, ClassNotFoundException{
-      Class.forName("com.mysql.cj.jdbc.Driver");
-        
+    Class.forName("org.postgresql.Driver");       
         return DriverManager.getConnection(JDBC, USER, PASSWORD);
     }
     

@@ -30,7 +30,7 @@ public class CadastroController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserService.Adicionar(new User(req.getParameter("EMAIL"), req.getParameter("SENHA")));
         System.out.println("\n\tUsuario cadastrado");
-
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
     

@@ -15,8 +15,8 @@ import org.junit.jupiter.api.Disabled;
  */
 public class DatabaseTest {
     @Test
-    @Disabled
     void TestConnection() throws SQLException, ClassNotFoundException{
+                
         Connection conexao = DatabaseManagement.conexao();
         if(conexao !=null){
             System.out.print("Conexão bem sucedida");
