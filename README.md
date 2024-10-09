@@ -1,7 +1,7 @@
 # Event Organizer
 
 A ideia deste projeto é a construção do zero de uma 
-aplicação web robusta, utilizando servlets, JSP, JUnit 5
+aplicação web que realiza um CRUD simples, utilizando servlets, JSP, JUnit 5
 para testes unitários, tomcat como servidor e um pouco de
 html e css. É importante ressaltar que o foco ***não é***
 a construção de um front-end bem trabalhado, apenas o
@@ -16,3 +16,5 @@ Bootstrap para simplificar o front end,
 Um pouco de JavaScript,
 JDBC para estabelecer a conexão com o banco de dados,
 e eu utilizei o PostgreSQL como banco relacional. 
+
+Projeto finalizado. 
