@@ -33,6 +33,18 @@ public abstract class EventDAO {
             e.printStackTrace();
         }
     }
-    
+    public static boolean deletar(Integer id){
+        try (Connection conexao = DatabaseManagement.conexao()){
+            PreparedStatement declaracao = conexao.prepareStatement("delete from Evento where id = ?");
+            declaracao.setInt(1, id);
+            int resultado = declaracao.executeUpdate();
+            if(resultado>0){
+                return true;
+            }
+        } catch(SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
     
 }

@@ -25,13 +25,23 @@ public class EditEventController extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Event evento = EventService.getEventos().get(Integer.valueOf(req.getParameter("id")));
+        var id = req.getParameter("id");
         req.setAttribute("nome", evento.getNome());
+        req.getSession().setAttribute("id", id);
         req.getRequestDispatcher("EditarEventos.jsp").forward(req, resp);
         req.getSession().setAttribute("evento", evento);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(!req.getParameter("evento").isBlank() || !req.getParameter("evento").isEmpty()){
+        Object ID =req.getSession().getAttribute("id");
+        int id =  Integer.parseInt(String.valueOf(ID));
+        EventService.Remover(id);
+        req.getRequestDispatcher("Eventos.jsp").forward(req, resp);
+
+    }else if(req.getParameter("newEventDate")!=null && req.getParameter("newEventName")!= null){
+        
         Event evento = (Event) req.getSession().getAttribute("evento");
         LocalDate novaDate = LocalDate.parse(req.getParameter("newEventDate"), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String novoNome = req.getParameter("newEventName");
@@ -40,9 +50,10 @@ public class EditEventController extends HttpServlet{
         evento.setDescricao(novaDes);
         evento.setNome(novoNome);
         req.getRequestDispatcher("Eventos.jsp").forward(req, resp);
+   
     }
     
     
     
     
-}
+}}

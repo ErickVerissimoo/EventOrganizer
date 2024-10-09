@@ -14,6 +14,12 @@
         .btn-success:hover {
             transform: scale(1.1);
         }
+        .btn-danger {
+            transition: 0.3s ease;
+        }
+        .btn-danger:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -26,6 +32,7 @@
     <form method="POST" action="Editar" class="mt-5">
         <h3>${nome}</h3><br>
         <input type="hidden" name="evento" value="${evento}">
+        
         <div class="form-group">
             <label for="newEventName">Novo Nome:</label>
             <input type="text" name="newEventName" id="newEventName" class="form-control" required>
@@ -42,6 +49,14 @@
         </div>
 
         <button type="submit" class="btn btn-success">Salvar Alterações</button>
+    </form>
+
+   
+    <form method="POST" action="Editar" class="mt-3">
+<input type="hidden" name="deletar" value="deletar">
+
+        <input type="hidden" name="evento" value="${id}">
+        <button type="submit" class="btn btn-danger">Deletar Evento</button>
     </form>
 </div>
 

@@ -1,11 +1,11 @@
 com/mycompany/eventorganizer/Controller/LoginController.class
-com/mycompany/eventorganizer/UserDAO/EventDAO.class
-com/mycompany/eventorganizer/Service/UserService.class
-com/mycompany/eventorganizer/Controller/CadastroController.class
-com/mycompany/eventorganizer/Model/User.class
-com/mycompany/eventorganizer/UserDAO/UserDAO.class
 com/mycompany/eventorganizer/Model/Event.class
 com/mycompany/eventorganizer/Controller/EventController.class
 com/mycompany/eventorganizer/Service/EventService.class
+com/mycompany/eventorganizer/UserDAO/EventDAO.class
+com/mycompany/eventorganizer/Service/UserService.class
 com/mycompany/eventorganizer/DatabaseManagement/DatabaseManagement.class
+com/mycompany/eventorganizer/Controller/CadastroController.class
+com/mycompany/eventorganizer/Model/User.class
 com/mycompany/eventorganizer/Controller/EditEventController.class
+com/mycompany/eventorganizer/UserDAO/UserDAO.class
