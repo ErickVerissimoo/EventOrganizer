@@ -5,11 +5,19 @@
 package com.mycompany.eventorganizer.Model;
 
 import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *
  * @author Erick
  */
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -17,18 +25,6 @@ public class User implements Serializable {
     private String email;
     private String senha;
 
-    public User(String email, String senha) {
-        this.email = email;
-        this.senha = senha;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
     @Override
     public boolean equals(Object objeto){
         User usuario = (User) objeto;

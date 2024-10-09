@@ -1,7 +1,7 @@
 package com.mycompany.eventorganizer.Service;
 
 import com.mycompany.eventorganizer.Model.User;
-import com.mycompany.eventorganizer.UserDAO.UserDAO;
+import com.mycompany.eventorganizer.DAOs.UserDAO;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

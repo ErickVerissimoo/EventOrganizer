@@ -12,9 +12,19 @@
 <header class="bg-primary text-white text-center py-4">
     <h1>Cadastro de Usuário</h1>
 </header>
-
+    <script>
+        function validar(event){
+            const senha1 = document.getElementById("SENHA").value;
+            const senha2 = document.getElementById("ConfirmaeSe").value;
+            if(senha1 !== senha2){
+                alert("As senhas precisam ser iguais!");
+                event.preventDefault();
+            }
+        }
+        
+    </script>
 <div class="container mt-4">
-    <form method="POST" action="Cadastro" class="border p-4 rounded shadow">
+    <form onsubmit="validar(event)" method="POST" action="Cadastro" class="border p-4 rounded shadow">
         <h2 class="mb-4">Preencha os Dados</h2>
         
         <div class="form-group">

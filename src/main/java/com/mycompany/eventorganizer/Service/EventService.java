@@ -5,7 +5,7 @@
 package com.mycompany.eventorganizer.Service;
 
 import com.mycompany.eventorganizer.Model.Event;
-import com.mycompany.eventorganizer.UserDAO.EventDAO;
+import com.mycompany.eventorganizer.DAOs.EventDAO;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -50,7 +50,7 @@ public class EventService {
         return true;
     }
     public static Boolean exists(Object evento){
-        return eventos.containsKey((Event) evento) || eventos.containsKey((Integer) evento);
+        return eventos.containsValue((Event) evento) || eventos.containsKey((Integer) evento);
     }
     
   
